@@ -7,7 +7,7 @@
 		</Console>
 
 		<RollingFile name="LogToRollingFile"
-			fileName="/CarPortallogs/car_app.log"
+			fileName="/marrymeal.log"
 			filePattern="logs/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz">
 			<PatternLayout>
 				<Pattern>%d %p %c{1.} [%t] %m%n</Pattern>
