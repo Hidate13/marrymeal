@@ -58,7 +58,7 @@
 					<form:form action="update" method="post"
 						modelAttribute="registration">
 						<div>
-							<form:hidden path="user.id"/>
+							<form:hidden path="user.id" />
 						</div>
 						<div class="form-group">
 							<label for="name">Your Full Name:</label>
@@ -81,33 +81,38 @@
 						<div class="form-group">
 							<c:choose>
 								<c:when test="${user.act == 'Administrator'}">
-										<label for="role">Register as:</label><br/>
-										<form:radiobutton path="user.act" value="Administrator" checked="checked" />
+									<label for="role">Register as:</label>
+									<br />
+									<form:radiobutton path="user.act" value="Administrator"
+										checked="checked" />
 										Administrator<br>
 								</c:when>
-						        <c:otherwise>
-									<label for="role">Register as:</label><br/>
-							            <form:radiobutton path="user.act" value="Member" checked="checked" />
+								<c:otherwise>
+									<label for="role">Register as:</label>
+									<br />
+									<form:radiobutton path="user.act" value="Member"
+										checked="checked" />
 							            Member<br>
-										<form:radiobutton path="user.act" value="Volunteer"  />
+									<form:radiobutton path="user.act" value="Volunteer" />
 										Volunteer<br>
-										<form:radiobutton path="user.act" value="Partner"  />
+									<form:radiobutton path="user.act" value="Partner" />
 										Partner <br>
 								</c:otherwise>
-							</c:choose>	
+							</c:choose>
 						</div>
 						<div id="foodRefDiv">
-							<label for="foodRef" >food reference :</label><br/>
-							<form:textarea id="foodreference" path="member.foodref" rows="3" style="color: black;"
-								cols="23" />
+							<label for="foodRef">food reference :</label><br />
+							<form:textarea id="foodreference" path="member.foodref" rows="3"
+								style="color: black;" cols="23" />
 						</div>
 						<div id="illnessDiv">
-							<label for="illness" >illness :</label><br/>
-							<form:textarea id="illness" path="member.illness" rows="3" style="color: black;"
-								cols="23" />
-						</div><br/>
+							<label for="illness">illness :</label><br />
+							<form:textarea id="illness" path="member.illness" rows="3"
+								style="color: black;" cols="23" />
+						</div>
+						<br />
 						<input type="submit" value="Update" class="btn btn-primary" />
-						<br/>
+						<br />
 
 					</form:form>
 				</div>
@@ -123,7 +128,7 @@
 
 
 	<%@ include file="footer.jsp"%>
-<script type="text/javascript">
+	<script type="text/javascript">
 document.addEventListener('DOMContentLoaded', function() {
     const memberRadio = document.querySelector('input[value="Member"]');
     const foodRefDiv = document.getElementById('foodRefDiv');

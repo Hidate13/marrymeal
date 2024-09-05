@@ -1,16 +1,18 @@
 @charset "ISO-8859-1";
 
 .card {
-	    /* margin: 0rem 17.5rem; */
+	/* margin: 0rem 17.5rem; */
 	padding: 2px 40px;
-	border-style:solid;
-	border-radius:15px;
-	background: linear-gradient(65deg, #286090 6%, #286090 1%, rgb(51 122 183/ 99%) 100%);
+	border-style: solid;
+	border-radius: 15px;
+	background: linear-gradient(65deg, #286090 6%, #286090 1%, rgb(51 122 183/ 99%)
+		100%);
 	border: outset;
-    border-top: unset;
-    border-left: unset;
-    border-color: dodgerblue;
-	box-shadow: 1px 5px 10px 0px rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+	border-top: unset;
+	border-left: unset;
+	border-color: dodgerblue;
+	box-shadow: 1px 5px 10px 0px rgba(0, 0, 0, 0.2), 0 6px 20px 0
+		rgba(0, 0, 0, 0.19);
 }
 
 .card>hr {
@@ -30,9 +32,9 @@
 
 .card-body {
 	-ms-flex: 1 1 auto;
-	flex: 1 1 auto;    
+	flex: 1 1 auto;
 	display: grid;
-    justify-content: center
+	justify-content: center
 }
 
 .card-title {
@@ -130,14 +132,13 @@
 	margin-bottom: 15px
 }
 
-@media (min-width :576px) {
+@media ( min-width :576px) {
 	.card-deck {
 		-ms-flex-flow: row wrap;
 		flex-flow: row wrap;
 		margin-right: -15px;
 		margin-left: -15px
 	}
-
 	.card-deck .card {
 		display: -ms-flexbox;
 		display: flex;
@@ -157,28 +158,26 @@
 	-ms-flex-direction: column;
 	flex-direction: column;
 	max-width: 70rem;
-	gap:1.5em;
-	 margin: auto;
-	
+	gap: 1.5em;
+	margin: auto;
 }
 
 .card-group>.card {
 	margin-bottom: 15px
 }
 
-@media (min-width :576px) {
+@media ( min-width :576px) {
 	.card-group {
 		-ms-flex-flow: row wrap;
 		flex-flow: row wrap
 	}
-
 	.card-group>.card {
 		-ms-flex: 1 0 0%;
 		flex: 1 0 0%;
 		margin-bottom: 0
 	}
 
-/*  .card-group>.card+.card {
+	/*  .card-group>.card+.card {
 		margin-left: 0;
 		border-left: 0
 	}
@@ -218,7 +217,7 @@
 	margin-bottom: .75rem
 }
 
-@media (min-width :576px) {
+@media ( min-width :576px) {
 	.card-columns {
 		-webkit-column-count: 3;
 		-moz-column-count: 3;
@@ -229,7 +228,6 @@
 		orphans: 1;
 		widows: 1
 	}
-
 	.card-columns .card {
 		display: inline-block;
 		width: 100%

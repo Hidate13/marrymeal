@@ -2,7 +2,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@ taglib prefix="sec"	uri="http://www.springframework.org/security/tags"%>
+<%@ taglib prefix="sec"
+	uri="http://www.springframework.org/security/tags"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
@@ -61,13 +62,14 @@
 						</div>
 						<div class="form-group">
 							<label for="donationAmount">Enter Donation Amount:</label>
-    						<form:input path="amount" id="donationAmount" class="form-control" name="donationAmount" required="true"/>
-    						<br/>
-    						<span id="amountError" style="color: red; display: none;">Please enter a valid numeric amount</span>
+							<form:input path="amount" id="donationAmount"
+								class="form-control" name="donationAmount" required="true" />
+							<br /> <span id="amountError" style="color: red; display: none;">Please
+								enter a valid numeric amount</span>
 						</div>
-						<br/>
+						<br />
 						<input type="submit" value="donate" class="btn btn-primary" />
-						<br/>
+						<br />
 
 					</form:form>
 				</div>
@@ -83,7 +85,7 @@
 
 
 	<%@ include file="footer.jsp"%>
-<script>
+	<script>
     //validating the donation amount input
     document.getElementById('donationAmount').addEventListener('input', function () {
     	let donationInput = this.value;

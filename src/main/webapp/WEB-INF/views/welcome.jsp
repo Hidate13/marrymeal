@@ -38,18 +38,18 @@
 <body>
 	<%@ include file="header.jsp"%>
 
-	<div class="hero" id="home"> 
-			<div class="content">
-					<div class="content-division-left">
-						<h1>
-							<span>Marry </span>Meal
-						</h1>
-						<p>Thank you for joining us. Marry Meal is your go-to platform for
-							delicious and healthy meals. Explore our menu, place orders, and
-							enjoy a delightful culinary experience.</p>
-						<a href="donation" class="cta">Donate</a>
-					</div>
-			</div> 
+	<div class="hero" id="home">
+		<div class="content">
+			<div class="content-division-left">
+				<h1>
+					<span>Marry </span>Meal
+				</h1>
+				<p>Thank you for joining us. Marry Meal is your go-to platform
+					for delicious and healthy meals. Explore our menu, place orders,
+					and enjoy a delightful culinary experience.</p>
+				<a href="donation" class="cta">Donate</a>
+			</div>
+		</div>
 	</div>
 
 	<%@ include file="footer.jsp"%>

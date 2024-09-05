@@ -51,7 +51,7 @@
 			</c:if>
 
 			<c:if test="${empty meals}">
-					<span> No Orders are added yet. </span>
+				<span> No Orders are added yet. </span>
 			</c:if>
 
 			<div class="row">
@@ -60,79 +60,76 @@
 
 					<div class="card-group">
 
-								<table class="table order">
-									  <thead>
-									    <tr>
-									      <th scope="col">No.</th>
-									      <th scope="col">Delivery ID</th>
-									      <th scope="col">Member Name</th>
-									      <th scope="col">Member Illness</th>
-									      <th scope="col">member Allergy</th>
-									      <th scope="col">Member Address</th>
-									      <th scope="col">Meal ID</th>
-									      <th scope="col">Meal Name</th>
-									      <th scope="col">Description</th>
-									      <th scope="col">Status</th>
-									      <th scope="col">Action</th>
-									    </tr>
-									  </thead>
-									<c:if test="${not empty meals}">
-										<%
+						<table class="table order">
+							<thead>
+								<tr>
+									<th scope="col">No.</th>
+									<th scope="col">Delivery ID</th>
+									<th scope="col">Member Name</th>
+									<th scope="col">Member Illness</th>
+									<th scope="col">member Allergy</th>
+									<th scope="col">Member Address</th>
+									<th scope="col">Meal ID</th>
+									<th scope="col">Meal Name</th>
+									<th scope="col">Description</th>
+									<th scope="col">Status</th>
+									<th scope="col">Action</th>
+								</tr>
+							</thead>
+							<c:if test="${not empty meals}">
+								<%
 										int i = 1;
 										%>
-										<c:forEach var="del" items="${delivery}">
-										    <c:if test="${del.approval}">								
-											  <tbody>
-											    <tr>
-											      <th scope="row"><%=i %></th>
-											      <td>${del.delivery_id}</td>
-											      <td id="member-name">${del.member_name}</td>
-											      <td>${del.illness}</td>
-											      <td>${del.foodref}</td>
-											      <td>${del.address}</td>
-											      <c:forEach var="meal" items="${meals}">
-									                  <c:if test="${del.meal_id == meal}">
-									                      <td>${meal.meal_id}</td>
-									                      <td id="meal-name">${meal.name}</td>
-									                      <td>${meal.foodReference}</td>
-									                  </c:if>
-		                						  </c:forEach>
-											      <td>
-											      	<c:choose>
-							                            <c:when test="${del.approval}">
+								<c:forEach var="del" items="${delivery}">
+									<c:if test="${del.approval}">
+										<tbody>
+											<tr>
+												<th scope="row"><%=i %></th>
+												<td>${del.delivery_id}</td>
+												<td id="member-name">${del.member_name}</td>
+												<td>${del.illness}</td>
+												<td>${del.foodref}</td>
+												<td>${del.address}</td>
+												<c:forEach var="meal" items="${meals}">
+													<c:if test="${del.meal_id == meal}">
+														<td>${meal.meal_id}</td>
+														<td id="meal-name">${meal.name}</td>
+														<td>${meal.foodReference}</td>
+													</c:if>
+												</c:forEach>
+												<td><c:choose>
+														<c:when test="${del.approval}">
 							                                    Ready
 							                            </c:when>
-							                            <c:otherwise>
+														<c:otherwise>
 							                                    Not Ready
 							                            </c:otherwise>
-							                        </c:choose>
-											      </td>
-											      <td>
-											      <c:choose>
-							                            <c:when test="${del.on_delivery}">
-							                                <a onclick="return riderConf(event, 'cancel')" id="cancel-link" href="take_over?id=${del.delivery_id}">
-							                                    <button class="btn-rider">Cancel</button>
-							                                </a>
-							                            </c:when>
-							                            <c:otherwise>
-							                                <a onclick="return riderConf(event, 'approve')" id="approve-link" href="take_over?id=${del.delivery_id}">
-							                                    <button class="btn-rider">Approve</button>
-							                                </a>
-							                            </c:otherwise>
-							                        </c:choose>
-											      	<%-- <a onclick="return riderConf(event)" id="rider-link" href="take_over?id=${meal.meal_id}&userId=${pageContext.request.userPrincipal.name}" >
+													</c:choose></td>
+												<td><c:choose>
+														<c:when test="${del.on_delivery}">
+															<a onclick="return riderConf(event, 'cancel')"
+																id="cancel-link" href="take_over?id=${del.delivery_id}">
+																<button class="btn-rider">Cancel</button>
+															</a>
+														</c:when>
+														<c:otherwise>
+															<a onclick="return riderConf(event, 'approve')"
+																id="approve-link" href="take_over?id=${del.delivery_id}">
+																<button class="btn-rider">Approve</button>
+															</a>
+														</c:otherwise>
+													</c:choose> <%-- <a onclick="return riderConf(event)" id="rider-link" href="take_over?id=${meal.meal_id}&userId=${pageContext.request.userPrincipal.name}" >
 														<button class="btn btn-info">Delivery</button>
-													</a> --%>
-											      </td>
-											    </tr>
-											  </tbody>
-											<%
+													</a> --%></td>
+											</tr>
+										</tbody>
+										<%
 											i++;
 											%>
-											</c:if>
-										</c:forEach>
 									</c:if>
-									</table>
+								</c:forEach>
+							</c:if>
+						</table>
 
 
 					</div>

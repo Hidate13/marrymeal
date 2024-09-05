@@ -40,8 +40,8 @@
 		<div class="row">
 			<div class="col-md-4"></div>
 			<div class="col-md-4">
-					<div class="form-wrapper">				
-						<%-- <form:form method="POST" action="/meals" modelAttribute="meal"
+				<div class="form-wrapper">
+					<%-- <form:form method="POST" action="/meals" modelAttribute="meal"
 							enctype="multipart/form-data">
 		
 							<input type="hidden" value="${_csrf.token}" />
@@ -52,19 +52,20 @@
 								<input	type="file" name="file" /><br/>
 							</div> --%>
 
-						
-						<form:form action="/meal" method="post" modelAttribute="meal" enctype="multipart/form-data">
+
+					<form:form action="/meal" method="post" modelAttribute="meal"
+						enctype="multipart/form-data">
 						<input type="hidden" value="${_csrf.token}" />
-							<form:hidden path="meal_id" />
+						<form:hidden path="meal_id" />
 						<c:if test="${meal.meal_id>0}">
-						<div class="form-group">
-							<img src="/images/${meal.mealphoto}" width="300px">
-							<form:hidden path="mealphoto" />
-						</div>
+							<div class="form-group">
+								<img src="/images/${meal.mealphoto}" width="300px">
+								<form:hidden path="mealphoto" />
+							</div>
 						</c:if>
 						<div class="form-group">
-							<label for="mealphoto">Upload Meal's Photo:</label><br/>
-							<input	type="file" name="file" /><br/>
+							<label for="mealphoto">Upload Meal's Photo:</label><br /> <input
+								type="file" name="file" /><br />
 						</div>
 						<div class="form-group">
 							<label for="name">Meal Name:</label>
@@ -72,20 +73,21 @@
 						</div>
 						<div class="form-group">
 							<label for="address">Description:</label>
-							<form:textarea id="foodReference" class="form-control" path="foodReference" rows="3" cols="23" />
+							<form:textarea id="foodReference" class="form-control"
+								path="foodReference" rows="3" cols="23" />
 						</div>
 						<%-- <div class="form-group">
 							<label for="isfrozen">is Frozen :</label><br/>
 							<form:radiobutton  path="isfrozen" value="yes" checked="true"/>Yes
 							<form:radiobutton  path="isfrozen" value="no"/>No
 						</div> --%>
-						<br/>
+						<br />
 						<input type="submit" value="Post" class="btn btn-primary" />
-						<br/>
+						<br />
 
 					</form:form>
-					</div>
-			<div class="col-md-4"></div>
+				</div>
+				<div class="col-md-4"></div>
 			</div>
 		</div>
 

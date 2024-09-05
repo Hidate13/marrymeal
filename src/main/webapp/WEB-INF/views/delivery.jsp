@@ -82,75 +82,77 @@
 
 
 
-<%-- <sec:authorize access="hasRole('Volunteer')">
+			<%-- <sec:authorize access="hasRole('Volunteer')">
     <!--volunteers -->
     <%@ include file="volunteer.jsp" %>
 </sec:authorize> --%>
 
-<%-- <sec:authorize access="hasAnyRole('Member', 'Partner', 'Administrator')"> --%>
+			<%-- <sec:authorize access="hasAnyRole('Member', 'Partner', 'Administrator')"> --%>
 			<div class="row">
 
 				<div class="col-md-flex">
 
 					<div class="card-group">
 
-								<table class="table">
-									  <thead>
-									    <tr>
-									      <th scope="col">No.</th>
-									      <th scope="col">Delivery ID</th>
-									      <th scope="col">Member Name</th>
-									      <th scope="col">Member Illness</th>
-									      <th scope="col">member Allergy</th>
-									      <th scope="col">Member Address</th>
-									      <th scope="col">Meal ID</th>
-									      <th scope="col">Meal Name</th>
-									      <th scope="col">Description</th>
-									      <th scope="col">Approval</th>
-									    </tr>
-									  </thead>
-									<c:if test="${not empty meals}">
-										<%
+						<table class="table">
+							<thead>
+								<tr>
+									<th scope="col">No.</th>
+									<th scope="col">Delivery ID</th>
+									<th scope="col">Member Name</th>
+									<th scope="col">Member Illness</th>
+									<th scope="col">member Allergy</th>
+									<th scope="col">Member Address</th>
+									<th scope="col">Meal ID</th>
+									<th scope="col">Meal Name</th>
+									<th scope="col">Description</th>
+									<th scope="col">Approval</th>
+								</tr>
+							</thead>
+							<c:if test="${not empty meals}">
+								<%
 										int i = 1;
 										%>
-										<c:forEach var="del" items="${delivery}">								
-											  <tbody>
-											    <tr>
-											      <th scope="row"><%=i %></th>
-											      <td>${del.delivery_id}</td>
-											      <td>${del.member_name}</td>
-											      <td>${del.illness}</td>
-											      <td>${del.foodref}</td>
-											      <td>${del.address}</td>
-											      <c:forEach var="meal" items="${meals}">
-									                  <c:if test="${del.meal_id == meal}">
-									                      <td>${meal.meal_id}</td>
-									                      <td>${meal.name}</td>
-									                      <td>${meal.foodReference}</td>
-									                  </c:if>
-		                						  </c:forEach>
-											      <td>
-											      	<c:choose>
-							                            <c:when test="${del.approval}">
-							                                <a onclick="return approvalMeal(event, 'cancel', '${del.delivery_id}')" id="cancel-link">
-							                                    <button class="btn btn-danger">Cancel</button>
-							                                </a>
-							                            </c:when>
-							                            <c:otherwise>
-							                                <a onclick="return approvalMeal(event, 'approve', '${del.delivery_id}')" id="approve-link">
-							                                    <button class="btn btn-info">Approve</button>
-							                                </a>
-							                            </c:otherwise>
-							                        </c:choose>
-											      </td>
-											    </tr>
-											  </tbody>
-											<%
+								<c:forEach var="del" items="${delivery}">
+									<tbody>
+										<tr>
+											<th scope="row"><%=i %></th>
+											<td>${del.delivery_id}</td>
+											<td>${del.member_name}</td>
+											<td>${del.illness}</td>
+											<td>${del.foodref}</td>
+											<td>${del.address}</td>
+											<c:forEach var="meal" items="${meals}">
+												<c:if test="${del.meal_id == meal}">
+													<td>${meal.meal_id}</td>
+													<td>${meal.name}</td>
+													<td>${meal.foodReference}</td>
+												</c:if>
+											</c:forEach>
+											<td><c:choose>
+													<c:when test="${del.approval}">
+														<a
+															onclick="return approvalMeal(event, 'cancel', '${del.delivery_id}')"
+															id="cancel-link">
+															<button class="btn btn-danger">Cancel</button>
+														</a>
+													</c:when>
+													<c:otherwise>
+														<a
+															onclick="return approvalMeal(event, 'approve', '${del.delivery_id}')"
+															id="approve-link">
+															<button class="btn btn-info">Approve</button>
+														</a>
+													</c:otherwise>
+												</c:choose></td>
+										</tr>
+									</tbody>
+									<%
 											i++;
 											%>
-										</c:forEach>
-									</c:if>
-									</table>
+								</c:forEach>
+							</c:if>
+						</table>
 
 
 					</div>
@@ -161,13 +163,13 @@
 
 			<!--  End Car Lists  -->
 
-<%-- </sec:authorize> --%>
+			<%-- </sec:authorize> --%>
 		</div>
 	</div>
 
 
 
 	<%@ include file="footer.jsp"%>
-<script src="/js/custom.js"></script>
+	<script src="/js/custom.js"></script>
 </body>
 </html>

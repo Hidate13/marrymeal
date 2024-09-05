@@ -62,25 +62,22 @@
 
 								<% int i=1; %>
 								<c:forEach var="user" items="${userlists}">
-								<c:if test="${user.act != 'Administrator'}">
-									<tr>
-										<td><%=i %></td>
-										<td>${user.id}</td>
-										<td>${user.name}</td>
-										<td>${user.userName}</td>
-										<td>******</td>
+									<c:if test="${user.act != 'Administrator'}">
+										<tr>
+											<td><%=i %></td>
+											<td>${user.id}</td>
+											<td>${user.name}</td>
+											<td>${user.userName}</td>
+											<td>******</td>
 
-										<td>
-											<a href="edituser?id=${user.id}">
-												<button class="btn btn-info">Update</button>
-											</a>
-											<%-- <a href="deleteuser?id=${user.id}">
+											<td><a href="edituser?id=${user.id}">
+													<button class="btn btn-info">Update</button>
+											</a> <%-- <a href="deleteuser?id=${user.id}">
 												<button class="btn btn-danger">Delete</button>
-											</a> --%>
-										</td>
-									</tr>
-									<% i++; %>
-								</c:if>
+											</a> --%></td>
+										</tr>
+										<% i++; %>
+									</c:if>
 								</c:forEach>
 
 							</tbody>

@@ -43,7 +43,8 @@
 			<!--  Search Meal Lists  -->
 
 			<div class="row">
-				<div class="col-md-12"   style="display: flex;   justify-content: center;">
+				<div class="col-md-12"
+					style="display: flex; justify-content: center;">
 					<c:url var="get_search_url" value="search" />
 					<form action="${get_search_url}" id="myform" method="get"
 						class="form-inline text-right" style="padding: 20px;">
@@ -84,25 +85,23 @@
 									<div class="card-body">
 										<h5 class="card-title">${meal.name}</h5>
 										<p class="card-text">
-										<p> Description : ${meal.foodReference}</p>
+										<p>Description : ${meal.foodReference}</p>
 										<p class="card-text">
-											<small class="text-muted"> 
-												<%-- <c:if test="${empty meals}"> --%>
-												
-													<sec:authorize access="hasRole('Member')">
-														<a href="order?id=${meal.meal_id}&userId=${pageContext.request.userPrincipal.name}">
-															<button class="btn btn-info">Order</button>
-														</a>
-													</sec:authorize>
-													<sec:authorize access="hasRole('Partner')">
-														<a href="edit?id=${meal.meal_id}">
-															<button class="btn btn-info">Update</button>
-														</a>
-														<a href="delete?id=${meal.meal_id}">
-															<button class="btn btn-danger">Delete</button>
-														</a>
-													</sec:authorize>
-												<%-- </c:if> --%>
+											<small class="text-muted"> <%-- <c:if test="${empty meals}"> --%>
+
+												<sec:authorize access="hasRole('Member')">
+													<a
+														href="order?id=${meal.meal_id}&userId=${pageContext.request.userPrincipal.name}">
+														<button class="btn btn-info">Order</button>
+													</a>
+												</sec:authorize> <sec:authorize access="hasRole('Partner')">
+													<a href="edit?id=${meal.meal_id}">
+														<button class="btn btn-info">Update</button>
+													</a>
+													<a href="delete?id=${meal.meal_id}">
+														<button class="btn btn-danger">Delete</button>
+													</a>
+												</sec:authorize> <%-- </c:if> --%>
 											</small>
 										</p>
 									</div>
